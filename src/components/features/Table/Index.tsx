@@ -1,11 +1,10 @@
-import React, { useReducer, useState } from 'react';
-
 import {
     createColumnHelper,
     flexRender,
     getCoreRowModel,
     useReactTable,
 } from '@tanstack/react-table';
+import React, { useReducer, useState } from 'react';
 
 type Person = {
     firstName: string;
@@ -75,8 +74,8 @@ const columns = [
     }),
 ];
 
-const Index = () => {
-    const [data, setData] = useState(() => [...defaultData]);
+function Index() {
+    const [data] = useState(() => [...defaultData]);
     const rerender = useReducer(() => ({}), {})[1];
 
     const table = useReactTable({
@@ -138,6 +137,6 @@ const Index = () => {
             </button>
         </div>
     );
-};
+}
 
 export default Index;
